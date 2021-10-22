@@ -16,10 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Och-AV-90e">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zahl eingeben" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Och-AV-90e">
                                 <rect key="frame" x="20" y="431" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="editingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="fDT-iG-D8K"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnz-sC-Erj">
                                 <rect key="frame" x="186" y="489" width="42" height="21"/>
@@ -27,7 +30,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRs-V0-20p">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRs-V0-20p">
                                 <rect key="frame" x="185.5" y="377" width="43" height="30"/>
                                 <state key="normal" title="Guess"/>
                                 <connections>
@@ -49,9 +52,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="GuessButton" destination="nRs-V0-20p" id="hZz-xh-00q"/>
-                        <outlet property="Lable" destination="rnz-sC-Erj" id="zHH-cX-c16"/>
-                        <outlet property="TextField" destination="Och-AV-90e" id="zTu-Ot-zJn"/>
+                        <outlet property="guessButton" destination="nRs-V0-20p" id="ciQ-je-C8m"/>
+                        <outlet property="lable" destination="rnz-sC-Erj" id="wOp-n1-FnN"/>
+                        <outlet property="textField" destination="Och-AV-90e" id="QUE-By-i8k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

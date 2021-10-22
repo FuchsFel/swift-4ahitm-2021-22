@@ -11,11 +11,16 @@ class ViewController: UIViewController {
 
     var model = Model()
     
+    @IBOutlet weak var guessButton: UIButton!
     @IBOutlet weak var lable: UILabel!
     @IBOutlet weak var textField: UITextField!
-    @IBAction func buttonClicked(_ sender: UIButton) {
+    @IBAction func editingChanged(_ sender: UITextField) {
+        guessButton.isEnabled = model.isValid(guess: textField.text)
         
-        //TODO: disable butto when input = nil
+        print ("Text ist now\(sender.text)")
+    }
+    
+    @IBAction func buttonClicked(_ sender: UIButton) {
         
         let guessNumber = model.compare(guessString: textField.text!)
         
@@ -27,7 +32,7 @@ class ViewController: UIViewController {
         case 1:
             text = "ZU groß"
         default:
-            text = "You guessed it :)"
+            text = "You guessed it :) / tries:\(model.countOfTries)"
         }
         
         lable.text = text
@@ -37,9 +42,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        model.numberToGuess = Int.random(in:
-            0..<100)
-        print("zu erratende:\(model.numberToGuess)")
+        model.numberToGuess = Int.random(in: 0..<100)
+        print("zu erratende Zahl:\(model.numberToGuess)")
         // Do any additional setup after loading the view.
     }
 }
